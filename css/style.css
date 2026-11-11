@@ -360,3 +360,124 @@ main {
   .player-name { font-size: 15px; }
   .pill-btn { font-size: 18px; padding: 12px 18px; }
 }
+
+/* ---------- Pintar ---------- */
+.paint {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.paint-main { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; min-height: 0; }
+.paint-title { margin: 0; }
+.paint-stage {
+  flex: 1;
+  width: 100%;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  container-type: size;
+}
+.paper {
+  position: relative;
+  width: min(100cqw, 100cqh);
+  aspect-ratio: 1;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 0 rgba(59, 42, 85, 0.15), 0 0 0 4px #fff;
+  overflow: hidden;
+}
+.paint-canvas, .paint-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.paint-canvas { touch-action: none; cursor: crosshair; }
+.paint-lines {
+  pointer-events: none;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.paint-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.palette {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 720px;
+}
+.swatch {
+  aspect-ratio: 1;
+  min-width: 0;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.15), 0 3px 0 rgba(59, 42, 85, 0.15);
+  transition: transform 0.12s;
+}
+.swatch.selected { transform: scale(1.15); box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--ink); }
+.brushes, .tool-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.brush {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  border: 4px solid transparent;
+}
+.brush-dot {
+  width: var(--w);
+  height: var(--w);
+  max-width: 44px;
+  max-height: 44px;
+  border-radius: 50%;
+  background: var(--c, var(--ink));
+}
+.brush.selected, .tool-btn.selected { border-color: var(--ink); }
+.tool-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 64px;
+  padding: 8px 16px;
+  font-size: 24px;
+  border-radius: 18px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border: 4px solid transparent;
+}
+.tool-btn span { font-size: 18px; font-weight: 700; }
+.tool-btn:disabled { opacity: 0.45; cursor: default; }
+.brush:active, .tool-btn:not(:disabled):active { transform: translateY(3px); }
+
+/* iPad deitado / ecrãs largos: ferramentas ao lado da folha */
+@media (orientation: landscape) and (min-width: 700px) {
+  .paint { flex-direction: row; }
+  .paint-tools { width: 300px; flex: none; justify-content: center; }
+  .palette { grid-template-columns: repeat(4, 1fr); }
+  .tool-row .tool-btn { flex: 1 1 100%; justify-content: center; }
+}
+@media (max-width: 520px) {
+  .paint-main { flex: none; }
+  .paint-stage { flex: none; height: calc(100vw - 32px); }
+  .palette { grid-template-columns: repeat(6, 1fr); }
+  .brush { width: 52px; height: 52px; }
+  .tool-btn { min-height: 52px; padding: 6px 10px; font-size: 20px; }
+  .tool-btn span { font-size: 15px; }
+}
