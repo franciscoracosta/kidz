@@ -25,6 +25,15 @@ export const GAMES = [
     tag: 'Estratégia',
     load: () => import('../games/cinco/cinco.js'),
   },
+  {
+    id: 'pintar',
+    title: 'Pintar',
+    emoji: '🎨🖌️',
+    description: 'Escolhe as cores e o pincel e pinta um desenho.',
+    color: '#b46cf0',
+    tag: 'Criatividade',
+    load: () => import('../games/pintar/pintar.js'),
+  },
 ];
 
 export function findGame(id) {
