@@ -481,3 +481,29 @@ main {
   .tool-btn { min-height: 52px; padding: 6px 10px; font-size: 20px; }
   .tool-btn span { font-size: 15px; }
 }
+
+/* ---------- Letras ---------- */
+.guide-canvas { pointer-events: none; }
+.letter-word { margin: 0; display: flex; align-items: center; gap: 8px; }
+.letter-word strong { font-size: 1.3em; color: #2bb673; }
+.letter-emoji { font-size: 1.3em; }
+.letter-paper.done { box-shadow: 0 8px 0 rgba(59, 42, 85, 0.15), 0 0 0 6px var(--win); }
+.letter-tools { justify-content: center; }
+.stars-box {
+  font-size: 30px;
+  font-weight: 800;
+  background: var(--card);
+  border-radius: 999px;
+  padding: 6px 22px;
+  box-shadow: var(--shadow);
+}
+.letter-hint {
+  margin: 0;
+  min-height: 2.6em;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ink-soft);
+}
+.letter-hint.good { color: #1fa34a; font-size: 30px; font-weight: 800; animation: pop-in 0.3s; }
+.letter-hint.warn { color: #e0701b; }

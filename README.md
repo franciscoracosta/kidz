@@ -7,6 +7,7 @@ Jogos disponíveis:
 - **Jogo do Galo**: 3 em linha num tabuleiro 3x3.
 - **5 em Linha**: 5 peças seguidas num tabuleiro 10x10.
 - **Pintar**: escolhe-se a cor e a largura do pincel e pinta-se um desenho escolhido ao calhas.
+- **Letras**: sai uma letra ao calhas em sombreado e a criança escreve-a por cima. Quando cobre bem a letra ganha uma estrela.
 
 O Jogo do Galo e o 5 em Linha dão para jogar a dois no mesmo aparelho ou contra o computador (nível fácil ou difícil). Os desenhos para pintar estão em `games/pintar/desenhos.js` e é fácil acrescentar mais.
 

@@ -34,6 +34,15 @@ export const GAMES = [
     tag: 'Criatividade',
     load: () => import('../games/pintar/pintar.js'),
   },
+  {
+    id: 'letras',
+    title: 'Letras',
+    emoji: '✏️🔤',
+    description: 'Aprende a escrever as letras por cima do sombreado.',
+    color: '#2bb673',
+    tag: 'Aprender',
+    load: () => import('../games/letras/letras.js'),
+  },
 ];
 
 export function findGame(id) {
