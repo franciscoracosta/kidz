@@ -8,6 +8,9 @@ Jogos disponíveis:
 - **5 em Linha**: 5 peças seguidas num tabuleiro 10x10.
 - **Pintar**: escolhe-se a cor e a largura do pincel e pinta-se um desenho escolhido ao calhas.
 - **Letras**: sai uma letra ao calhas em sombreado e a criança escreve-a por cima. Quando cobre bem a letra ganha uma estrela.
+- **Memória**: virar cartas e encontrar os pares (3 níveis, temas ao calhas).
+- **Sequências**: descobrir o que vem a seguir numa fila de cores, bichos ou frutas. Sobe de nível sozinho.
+- **Sons dos Animais**: ouve-se o som (voz do aparelho) e toca-se no animal certo.
 
 O Jogo do Galo e o 5 em Linha dão para jogar a dois no mesmo aparelho ou contra o computador (nível fácil ou difícil). Os desenhos para pintar estão em `games/pintar/desenhos.js` e é fácil acrescentar mais.
 
