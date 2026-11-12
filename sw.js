@@ -1,6 +1,6 @@
 // Guarda a app no dispositivo para funcionar sem internet.
 // Sempre que mudares ficheiros, sobe a versão para os iPads irem buscar a nova.
-const VERSION = 'kidz-v3';
+const VERSION = 'kidz-v4';
 const FILES = [
   './',
   './index.html',
@@ -16,6 +16,12 @@ const FILES = [
   './games/pintar/desenhos.js',
   './games/letras/letras.js',
   './games/letras/logic.js',
+  './games/memoria/memoria.js',
+  './games/memoria/logic.js',
+  './games/sequencias/sequencias.js',
+  './games/sequencias/logic.js',
+  './games/animais/animais.js',
+  './games/animais/logic.js',
   './manifest.webmanifest',
   './icons/icon.svg',
   './icons/icon-192.png',

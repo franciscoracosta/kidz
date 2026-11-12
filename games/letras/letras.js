@@ -73,15 +73,8 @@ export function mount(root, { sound, celebrate, el }) {
   };
 
   function falar() {
-    if (!sound.on || !('speechSynthesis' in window)) return;
     const { letra, palavra } = LETRAS[indice];
-    try {
-      speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(`${letra}... de ${palavra}`);
-      u.lang = 'pt-PT';
-      u.rate = 0.85;
-      speechSynthesis.speak(u);
-    } catch { /* sem voz neste aparelho */ }
+    sound.speak(`${letra}... de ${palavra}`, { rate: 0.85, pitch: 1 });
   }
 
   function atualizarTexto() {
@@ -266,6 +259,6 @@ export function mount(root, { sound, celebrate, el }) {
 
   return () => {
     ro.disconnect();
-    try { speechSynthesis.cancel(); } catch { /* nada */ }
+    sound.stopSpeaking();
   };
 }

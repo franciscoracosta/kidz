@@ -507,3 +507,129 @@ main {
 }
 .letter-hint.good { color: #1fa34a; font-size: 30px; font-weight: 800; animation: pop-in 0.3s; }
 .letter-hint.warn { color: #e0701b; }
+
+/* ---------- Partilhado pelos jogos de escolher ---------- */
+.big-sub { font-size: 16px; font-weight: 700; color: var(--ink-soft); }
+.message.good { color: #1fa34a; }
+.level-box { font-size: 22px; }
+.shake { animation: shake 0.4s; }
+.wrong { opacity: 0.4; }
+.right { background: var(--win) !important; transform: scale(1.08); }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-10px); }
+  40%, 80% { transform: translateX(10px); }
+}
+
+/* ---------- Memória ---------- */
+.memory-grid {
+  --cols: 4;
+  --rows: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 12px;
+  width: min(100cqw, 100cqh * var(--cols) / var(--rows), 760px);
+}
+.memory-card {
+  aspect-ratio: 1;
+  perspective: 600px;
+  padding: 0;
+}
+.memory-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.35s;
+  transform-style: preserve-3d;
+}
+.memory-card.flipped .memory-inner { transform: rotateY(180deg); }
+.memory-back, .memory-front {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: var(--shadow);
+}
+.memory-back {
+  background: repeating-linear-gradient(45deg, #ff6f91, #ff6f91 12px, #ff8fab 12px, #ff8fab 24px);
+  font-size: clamp(22px, 5cqmin, 44px);
+}
+.memory-front {
+  background: var(--card);
+  transform: rotateY(180deg);
+  font-size: clamp(30px, 9cqmin, 76px);
+}
+.memory-card.matched { animation: wiggle 0.5s; }
+.memory-card.matched .memory-front { background: #d7f7e2; }
+
+/* ---------- Sequências ---------- */
+.seq-stage { flex: 1; display: flex; align-items: center; justify-content: center; width: 100%; }
+.seq-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 100%;
+}
+.seq-item {
+  font-size: clamp(36px, 7vw, 64px);
+  width: 1.4em;
+  height: 1.4em;
+  display: grid;
+  place-items: center;
+  animation: pop-in 0.35s backwards;
+}
+.seq-gap {
+  border: 4px dashed var(--ink-soft);
+  border-radius: 16px;
+  font-size: clamp(28px, 5vw, 48px);
+}
+.seq-gap.filled { border-color: var(--win); background: #d7f7e2; font-size: clamp(36px, 7vw, 64px); animation: pop-in 0.3s; }
+.seq-options, .animal-options { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+.seq-option, .animal-option {
+  font-size: clamp(48px, 9vw, 80px);
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  transition: transform 0.15s, background 0.2s;
+}
+.seq-option:not(:disabled):active, .animal-option:not(:disabled):active { transform: translateY(4px); }
+
+/* ---------- Sons dos animais ---------- */
+.animals .animal-options { flex: 1; align-content: center; }
+.animal-option { font-size: clamp(64px, 13vw, 120px); }
+.bubble {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 30px;
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 800;
+  background: var(--card);
+  border-radius: 40px;
+  box-shadow: var(--shadow);
+}
+.bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  margin-left: -12px;
+  border: 12px solid transparent;
+  border-top: 16px solid var(--card);
+  border-bottom: 0;
+}
+.bubble.wiggle { animation: wiggle 0.6s; }

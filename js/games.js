@@ -43,6 +43,33 @@ export const GAMES = [
     tag: 'Aprender',
     load: () => import('../games/letras/letras.js'),
   },
+  {
+    id: 'memoria',
+    title: 'Memória',
+    emoji: '🧠🃏',
+    description: 'Vira as cartas e encontra os pares iguais.',
+    color: '#ff6f91',
+    tag: 'Memória',
+    load: () => import('../games/memoria/memoria.js'),
+  },
+  {
+    id: 'sequencias',
+    title: 'Sequências',
+    emoji: '🔴🔵❓',
+    description: 'Descobre o que vem a seguir na fila.',
+    color: '#f5a623',
+    tag: 'Lógica',
+    load: () => import('../games/sequencias/sequencias.js'),
+  },
+  {
+    id: 'animais',
+    title: 'Sons dos Animais',
+    emoji: '🐮🔊',
+    description: 'Ouve o som e descobre que animal é.',
+    color: '#3cb4c4',
+    tag: 'Aprender',
+    load: () => import('../games/animais/animais.js'),
+  },
 ];
 
 export function findGame(id) {

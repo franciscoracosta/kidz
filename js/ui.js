@@ -17,6 +17,24 @@ export const sound = {
     try { localStorage.setItem(SOUND_KEY, soundOn ? 'on' : 'off'); } catch { /* sem armazenamento */ }
     return soundOn;
   },
+  /** Diz um texto em voz alta (voz do aparelho em pt-PT). Devolve false se não houver voz. */
+  speak(text, { rate = 0.9, pitch = 1.1 } = {}) {
+    if (!soundOn || !('speechSynthesis' in window)) return false;
+    try {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'pt-PT';
+      u.rate = rate;
+      u.pitch = pitch;
+      speechSynthesis.speak(u);
+      return true;
+    } catch {
+      return false;
+    }
+  },
+  stopSpeaking() {
+    try { speechSynthesis.cancel(); } catch { /* sem voz */ }
+  },
   /** Toca um som curto: 'tap', 'p1', 'p2', 'win', 'draw', 'oops'. */
   play(name) {
     if (!soundOn) return;
