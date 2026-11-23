@@ -12,7 +12,7 @@ Jogos disponíveis:
 - **Sequências**: descobrir o que vem a seguir numa fila de cores, bichos ou frutas. Sobe de nível sozinho.
 - **Sons dos Animais**: ouve-se o som (voz do aparelho) e toca-se no animal certo.
 - **Diz uma Palavra**: sai uma letra (B) ou um par de letras (BA) e a criança diz uma palavra que comece assim. Se o aparelho deixar usar o microfone, a app ouve e confirma a palavra; se não, carrega-se em "Já disse!". O botão "Ajuda" mostra exemplos com desenho e lê-os.
-- **Setas Diferentes**: aparece uma grelha de setas todas a apontar para o mesmo lado, menos uma (ou duas, nos níveis mais altos). A criança toca nas diferentes. Sobe de nível sozinho: grelha maior e setas cada vez menos tortas.
+- **7 Diferenças**: dois desenhos quase iguais (jardim, fundo do mar, espaço ou quinta) e a criança toca nas 7 coisas que mudaram. No nível fácil falta um boneco ou trocou; no difícil também muda de tamanho ou está virado. Há um botão de ajuda.
 
 O Jogo do Galo e o 5 em Linha dão para jogar a dois no mesmo aparelho ou contra o computador (nível fácil ou difícil). Os desenhos para pintar estão em `games/pintar/desenhos.js` e é fácil acrescentar mais.
 

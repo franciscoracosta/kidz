@@ -80,13 +80,13 @@ export const GAMES = [
     load: () => import('../games/palavras/palavras.js'),
   },
   {
-    id: 'setas',
-    title: 'Setas Diferentes',
-    emoji: '⬆️⬇️',
-    description: 'Todas as setas apontam para o mesmo lado menos uma. Descobre qual!',
+    id: 'diferencas',
+    title: '7 Diferenças',
+    emoji: '🔍🖼️',
+    description: 'Dois desenhos quase iguais. Encontra as 7 diferenças!',
     color: '#ef5da8',
     tag: 'Atenção',
-    load: () => import('../games/setas/setas.js'),
+    load: () => import('../games/diferencas/diferencas.js'),
   },
 ];
 
