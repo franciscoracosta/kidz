@@ -697,3 +697,36 @@ main {
   .word-result { min-height: 70px; }
   .word-stage { gap: 8px; }
 }
+
+/* ---------- Setas diferentes ---------- */
+.arrows-grid {
+  --lado: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--lado), 1fr);
+  gap: clamp(6px, 1.6cqmin, 14px);
+  padding: clamp(10px, 2.4cqmin, 22px);
+  width: min(100cqw, 100cqh, 680px);
+  aspect-ratio: 1;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.arrow-cell {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 16px;
+  background: #f4effa;
+  transition: background 0.2s, opacity 0.3s, transform 0.15s;
+  animation: pop-in 0.3s backwards;
+}
+.arrow-cell svg {
+  width: 82%;
+  height: 82%;
+  transform: rotate(var(--rot));
+  pointer-events: none;
+}
+.arrow-cell:not(:disabled):active { transform: scale(0.94); }
+.arrow-cell.found { background: #d7f7e2; box-shadow: 0 0 0 5px var(--win); animation: wiggle 0.5s; }
+.arrow-cell.dim { opacity: 0.35; }
+.arrow-cell.shake { animation: shake 0.4s; background: #ffe0e6; }

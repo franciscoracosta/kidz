@@ -79,6 +79,15 @@ export const GAMES = [
     tag: 'Aprender',
     load: () => import('../games/palavras/palavras.js'),
   },
+  {
+    id: 'setas',
+    title: 'Setas Diferentes',
+    emoji: '⬆️⬇️',
+    description: 'Todas as setas apontam para o mesmo lado menos uma. Descobre qual!',
+    color: '#ef5da8',
+    tag: 'Atenção',
+    load: () => import('../games/setas/setas.js'),
+  },
 ];
 
 export function findGame(id) {
