@@ -697,3 +697,42 @@ main {
   .word-result { min-height: 70px; }
   .word-stage { gap: 8px; }
 }
+
+/* ---------- Adivinha a palavra ---------- */
+.guess-row {
+  --n: 5;
+  display: flex;
+  gap: clamp(6px, 1.2vw, 14px);
+  justify-content: center;
+  width: 100%;
+}
+.guess-tile {
+  width: min(calc((100vw - 60px) / var(--n) - 12px), 120px);
+  aspect-ratio: 0.85;
+  display: grid;
+  place-items: center;
+  font-size: min(calc((100vw - 60px) / var(--n) * 0.6), 84px);
+  font-weight: 900;
+  color: #e0559b;
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+.guess-tile.hidden { color: #c9bfd9; background: #f1ebfa; border: 4px dashed #c9bfd9; box-shadow: none; }
+.guess-tile.new { animation: pop-in 0.4s; }
+.right-row .guess-tile { background: var(--win); color: #fff; }
+.guess-picture {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 800;
+  animation: pop-in 0.35s;
+}
+.guess-picture:empty { animation: none; }
+.guess-picture .word-emoji { font-size: 1.8em; }
+@media (max-height: 620px) {
+  .guess-tile { width: min(calc((100vw - 60px) / var(--n) - 12px), 90px); font-size: min(calc((100vw - 60px) / var(--n) * 0.6), 60px); }
+  .guess-picture { min-height: 70px; }
+}
