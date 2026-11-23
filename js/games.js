@@ -70,6 +70,15 @@ export const GAMES = [
     tag: 'Aprender',
     load: () => import('../games/animais/animais.js'),
   },
+  {
+    id: 'palavras',
+    title: 'Diz uma Palavra',
+    emoji: '🗣️🔤',
+    description: 'Sai uma letra ou duas e dizes uma palavra que comece assim.',
+    color: '#7a6cf0',
+    tag: 'Aprender',
+    load: () => import('../games/palavras/palavras.js'),
+  },
 ];
 
 export function findGame(id) {
