@@ -8,12 +8,11 @@ test('palavras com 4 ou mais letras, sem repetidas e com desenho', () => {
   for (const p of PALAVRAS) assert.ok(p.palavra.length >= 4 && p.emoji);
 });
 
-test('mostra 2 letras e depois mais 2 até ao fim', () => {
+test('mostra 2 letras e depois uma de cada vez até ao fim', () => {
   assert.deepEqual(quadrados('gato', 2), ['G', 'A', null, null]);
-  assert.equal(maisLetras(2, 'gato'), 4);
-  assert.equal(maisLetras(2, 'macaco'), 4);
-  assert.equal(maisLetras(4, 'macaco'), 6);
-  assert.equal(maisLetras(4, 'zebra'), 5);
+  assert.equal(maisLetras(2, 'gato'), 3);
+  assert.equal(maisLetras(3, 'gato'), 4);
+  assert.equal(maisLetras(4, 'gato'), 4);
   assert.deepEqual(quadrados('maçã', 4), ['M', 'A', 'Ç', 'Ã']);
 });
 

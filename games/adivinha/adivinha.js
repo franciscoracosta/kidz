@@ -17,7 +17,7 @@ export function mount(root, { sound, celebrate, el }) {
   const fila = el('div', { class: 'guess-row' });
   const desenho = el('div', { class: 'guess-picture' });
   const micBtn = el('button', { class: 'pill-btn primary mic-btn', onclick: () => ouvir() }, '🎤 Adivinhar');
-  const maisBtn = el('button', { class: 'pill-btn', onclick: () => mais() }, '➕ Mais letras');
+  const maisBtn = el('button', { class: 'pill-btn', onclick: () => mais() }, '➕ Mais uma letra');
   const acerteiBtn = el('button', { class: 'pill-btn', onclick: () => ganhar() }, '👍 Acertei!');
   const verBtn = el('button', { class: 'pill-btn', onclick: () => ver() }, '👀 Ver');
   const outraBtn = el('button', { class: 'pill-btn', onclick: () => { sound.play('tap'); nova(); } }, '⏭️ Outra');

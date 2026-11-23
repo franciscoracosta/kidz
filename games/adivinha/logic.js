@@ -1,4 +1,4 @@
-// Adivinha a palavra (sem DOM): mostram-se 2 letras, depois mais 2, até a
+// Adivinha a palavra (sem DOM): mostram-se 2 letras, depois mais uma de cada vez, até a
 // criança adivinhar. Usa as palavras com desenho do jogo "Diz uma Palavra".
 import { LETRAS, normalizar } from '../palavras/logic.js';
 
@@ -22,9 +22,9 @@ export function novaPalavra(anterior = null, random = Math.random) {
   return possiveis[Math.floor(random() * possiveis.length)];
 }
 
-/** Quantas letras se mostram depois de carregar em "mais" (de 2 em 2, sem passar o tamanho). */
+/** Quantas letras se mostram depois de carregar em "mais" (uma de cada vez, sem passar o tamanho). */
 export function maisLetras(mostradas, palavra) {
-  return Math.min(mostradas + 2, palavra.length);
+  return Math.min(mostradas + 1, palavra.length);
 }
 
 /** As letras para os quadrados: as escondidas ficam null. */

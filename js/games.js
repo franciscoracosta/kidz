@@ -83,7 +83,7 @@ export const GAMES = [
     id: 'adivinha',
     title: 'Adivinha a Palavra',
     emoji: '🔤❓',
-    description: 'Aparecem 2 letras, depois mais 2. Adivinha a palavra!',
+    description: 'Aparecem 2 letras e depois mais uma de cada vez. Adivinha a palavra!',
     color: '#e0559b',
     tag: 'Aprender',
     load: () => import('../games/adivinha/adivinha.js'),
