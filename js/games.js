@@ -88,6 +88,15 @@ export const GAMES = [
     tag: 'Aprender',
     load: () => import('../games/adivinha/adivinha.js'),
   },
+  {
+    id: 'diferencas',
+    title: '7 Diferenças',
+    emoji: '🔍🖼️',
+    description: 'Dois desenhos quase iguais. Encontra as 7 diferenças!',
+    color: '#8bc34a',
+    tag: 'Atenção',
+    load: () => import('../games/diferencas/diferencas.js'),
+  },
 ];
 
 export function findGame(id) {
