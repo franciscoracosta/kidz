@@ -12,6 +12,7 @@ Jogos disponíveis:
 - **Sequências**: descobrir o que vem a seguir numa fila de cores, bichos ou frutas. Sobe de nível sozinho.
 - **Sons dos Animais**: ouve-se o som (voz do aparelho) e toca-se no animal certo.
 - **Diz uma Palavra**: sai uma letra (B) ou um par de letras (BA) e a criança diz uma palavra que comece assim. Se o aparelho deixar usar o microfone, a app ouve e confirma a palavra; se não, carrega-se em "Já disse!". O botão "Ajuda" mostra exemplos com desenho e lê-os.
+- **Adivinha a Palavra**: aparecem as 2 primeiras letras de uma palavra e os outros quadrados escondidos. Carrega-se em "Mais letras" para ver mais 2, até adivinhar. Dá 3 estrelas se adivinhar só com 2 letras. Pode-se dizer a palavra ao microfone ou carregar em "Acertei!".
 
 O Jogo do Galo e o 5 em Linha dão para jogar a dois no mesmo aparelho ou contra o computador (nível fácil ou difícil). Os desenhos para pintar estão em `games/pintar/desenhos.js` e é fácil acrescentar mais.
 
