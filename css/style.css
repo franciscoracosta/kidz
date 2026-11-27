@@ -249,7 +249,7 @@ main {
 
 /* ---------- Jogo do Galo ---------- */
 .galo-board {
-  width: min(100cqw, 100cqh, 640px);
+  width: min(100cqw, 100cqh, 760px);
   aspect-ratio: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -870,3 +870,60 @@ main {
   60% { transform: translate(-50%, -50%) scale(0.95, 1.05); }
 }
 .pill-btn:disabled { cursor: default; }
+
+/* ---------- Leva a Água (canos) ---------- */
+.pipes-board {
+  --n: 4;
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--n), minmax(0, 1fr));
+  gap: 0;
+  padding: 10px;
+  width: min(100cqw, 100cqh, 760px);
+  aspect-ratio: 1;
+  background: #c8e6a0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s;
+}
+.pipes-board.solved { box-shadow: 0 0 0 8px var(--win), var(--shadow); }
+.pipe-tile {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border-radius: 0;
+  background: #fffaf0;
+  box-shadow: inset 0 0 0 1px rgba(59, 42, 85, 0.12);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.pipe-tile.vazio { background: transparent; box-shadow: none; }
+.pipe-tile.fonte { background: #dcf0ff; }
+.pipe-tile.flor { background: #fff1c2; }
+.pipe-tile.locked { background: #d7f7e2; }
+.pipe-tile:active:not(:disabled) { background: #fff1a8; }
+.pipe-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.18s ease-out;
+  pointer-events: none;
+}
+.pipe-svg line, .pipe-svg circle { stroke-linecap: butt; }
+.pipe-out line { stroke: var(--ink); stroke-width: 30; }
+.pipe-out circle { fill: var(--ink); }
+.pipe-in line { stroke: #cfc3df; stroke-width: 18; transition: stroke 0.25s; }
+.pipe-in circle { fill: #cfc3df; transition: fill 0.25s; }
+.pipe-tile.wet .pipe-in line { stroke: #3fa9f5; }
+.pipe-tile.wet .pipe-in circle { fill: #3fa9f5; }
+.pipe-icon {
+  position: relative;
+  font-size: min(calc(100cqw / var(--n) * 0.5), calc(100cqh / var(--n) * 0.5), 64px);
+  line-height: 1;
+  pointer-events: none;
+}
+.pipe-icon.grow { animation: pop-in 0.35s; }
