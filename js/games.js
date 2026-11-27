@@ -115,6 +115,15 @@ export const GAMES = [
     tag: 'A dois',
     load: () => import('../games/esconde/esconde.js'),
   },
+  {
+    id: 'canos',
+    title: 'Leva a Água',
+    emoji: '🚰🌻',
+    description: 'Roda os canos para a água chegar às flores. Cada nível é mais difícil!',
+    color: '#3f8fd8',
+    tag: 'Lógica',
+    load: () => import('../games/canos/canos.js'),
+  },
 ];
 
 export function findGame(id) {
