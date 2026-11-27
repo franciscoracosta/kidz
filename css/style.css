@@ -820,3 +820,53 @@ main {
 @media (max-height: 620px) {
   .sudoku-pick { font-size: 40px; }
 }
+
+/* ---------- Esconde a Bola ---------- */
+.hide-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  overflow: hidden;
+}
+.hide-square {
+  position: absolute;
+  border-radius: var(--radius);
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.18) 0 18px, transparent 18px 36px),
+    #9fd8a8;
+  box-shadow: inset 0 0 0 6px #6fbf7c, var(--shadow);
+}
+.hide-item {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
+  filter: drop-shadow(0 4px 2px rgba(59, 42, 85, 0.25));
+  touch-action: none;
+  cursor: grab;
+  transition: transform 0.15s;
+}
+.hide-item.dragging {
+  transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1.15);
+  filter: drop-shadow(0 12px 6px rgba(59, 42, 85, 0.3));
+  cursor: grabbing;
+  transition: none;
+}
+.hide-stage.hiding .hide-item { transition: left 0.6s ease-in-out, top 0.6s ease-in-out, transform 0.6s; }
+.hide-ball { filter: drop-shadow(0 4px 2px rgba(59, 42, 85, 0.35)); }
+.hide-ball.found, .hide-ball.reveal {
+  border-radius: 50%;
+  background: rgba(255, 241, 168, 0.85);
+  box-shadow: 0 0 0 6px var(--win);
+  animation: hide-bounce 0.7s ease-in-out 3;
+}
+.hide-ball.reveal { box-shadow: 0 0 0 6px #f5a623; }
+.hide-stage.revealed .hide-obj { opacity: 0.35; }
+@keyframes hide-bounce {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  40% { transform: translate(-50%, -80%) scale(1.25); }
+  60% { transform: translate(-50%, -50%) scale(0.95, 1.05); }
+}
+.pill-btn:disabled { cursor: default; }
