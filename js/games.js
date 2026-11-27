@@ -106,6 +106,15 @@ export const GAMES = [
     tag: 'Lógica',
     load: () => import('../games/sudoku/sudoku.js'),
   },
+  {
+    id: 'esconde',
+    title: 'Esconde a Bola',
+    emoji: '⚽🧸',
+    description: 'Um esconde a bola debaixo dos brinquedos e o outro tem de a encontrar.',
+    color: '#26a69a',
+    tag: 'A dois',
+    load: () => import('../games/esconde/esconde.js'),
+  },
 ];
 
 export function findGame(id) {

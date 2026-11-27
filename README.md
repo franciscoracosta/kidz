@@ -14,6 +14,7 @@ Jogos disponíveis:
 - **Diz uma Palavra**: sai uma letra (B) ou um par de letras (BA) e a criança diz uma palavra que comece assim. Se o aparelho deixar usar o microfone, a app ouve e confirma a palavra; se não, carrega-se em "Já disse!". O botão "Ajuda" mostra exemplos com desenho e lê-os.
 - **Adivinha a Palavra**: aparecem as 2 primeiras letras de uma palavra e os outros quadrados escondidos. Carrega-se em "Mais uma letra" para ver a seguinte, até adivinhar. Dá 3 estrelas se adivinhar só com 2 letras. Pode-se dizer a palavra ao microfone ou carregar em "Acertei!".
 - **7 Diferenças**: dois desenhos quase iguais (jardim, fundo do mar, espaço ou quinta) e a criança toca nas 7 coisas que mudaram. No nível fácil falta um boneco ou trocou; no difícil também muda de tamanho ou está virado. Há um botão de ajuda.
+- **Esconde a Bola**: um quadro cheio de brinquedos. Uma pessoa arrasta a bola para cima do quadro e carrega em Iniciar: a bola fica escondida por baixo de tudo. Depois outra pessoa vai arrastando os brinquedos para o lado até a encontrar. Também dá para ser o iPad a esconder.
 
 O Jogo do Galo e o 5 em Linha dão para jogar a dois no mesmo aparelho ou contra o computador (nível fácil ou difícil). Os desenhos para pintar estão em `games/pintar/desenhos.js` e é fácil acrescentar mais.
 
