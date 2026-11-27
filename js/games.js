@@ -97,6 +97,15 @@ export const GAMES = [
     tag: 'Atenção',
     load: () => import('../games/diferencas/diferencas.js'),
   },
+  {
+    id: 'sudoku',
+    title: 'Sudoku de Figuras',
+    emoji: '🐶🧩',
+    description: 'Põe as figuras que faltam. Nada se pode repetir!',
+    color: '#ef7d3c',
+    tag: 'Lógica',
+    load: () => import('../games/sudoku/sudoku.js'),
+  },
 ];
 
 export function findGame(id) {
