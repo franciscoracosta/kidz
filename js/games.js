@@ -124,6 +124,15 @@ export const GAMES = [
     tag: 'Lógica',
     load: () => import('../games/canos/canos.js'),
   },
+  {
+    id: 'puzzle',
+    title: 'Puzzle',
+    emoji: '🧩🐶',
+    description: 'Junta as peças: cãezinhos de resgate, o Aranhito ou uma foto tua!',
+    color: '#5c6bc0',
+    tag: 'Atenção',
+    load: () => import('../games/puzzle/puzzle.js'),
+  },
 ];
 
 export function findGame(id) {
