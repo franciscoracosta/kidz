@@ -927,3 +927,62 @@ main {
   pointer-events: none;
 }
 .pipe-icon.grow { animation: pop-in 0.35s; }
+
+/* ---------- Puzzle ---------- */
+.puzzle-setup { max-width: 980px; }
+.puzzle-picks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr));
+  gap: 16px;
+}
+.puzzle-pick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px 12px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.1s;
+  animation: pop-in 0.35s backwards;
+}
+.puzzle-pick:active { transform: translateY(4px); box-shadow: 0 2px 0 rgba(59, 42, 85, 0.15); }
+.puzzle-pick img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; display: block; }
+.puzzle-pick-name { font-size: 19px; font-weight: 800; }
+.puzzle-pick.foto { justify-content: center; background: #e6e9ff; min-height: 200px; }
+.puzzle-pick-emoji { font-size: 72px; line-height: 1.1; }
+.puzzle-preview {
+  width: min(240px, 50vw);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
+  margin: 0 auto;
+}
+.puzzle-sizes { margin-bottom: 18px; }
+.puzzle-sizes .big-btn { flex: 1 1 150px; max-width: 180px; padding: 16px 10px; font-size: 22px; }
+.puzzle-sizes .big-emoji { font-size: 44px; }
+.puzzle-sizes .big-btn.chosen { box-shadow: 0 0 0 4px #5c6bc0, var(--shadow); }
+.play.puzzle { max-width: 1200px; }
+.puzzle-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  overflow: hidden;
+}
+.puzzle-board, .puzzle-final, .puzzle-piece {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.puzzle-board { border-radius: 6px; box-shadow: 0 0 0 6px #fff, var(--shadow); }
+.puzzle-final { z-index: 5000; opacity: 0; transition: opacity 0.8s; border-radius: 6px; }
+.puzzle-final.show { opacity: 1; box-shadow: 0 0 0 8px var(--win), var(--shadow); }
+.puzzle-piece { z-index: 10; will-change: transform; }
+.puzzle-piece.dragging { filter: drop-shadow(0 8px 6px rgba(59, 42, 85, 0.35)); }
+.puzzle-piece.snap { transition: transform 0.2s ease-out; }
+.puzzle-piece.placed { z-index: 1; }
