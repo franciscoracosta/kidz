@@ -762,3 +762,61 @@ main {
 .diff-found { fill: rgba(76, 217, 123, 0.15); stroke: #1fa34a; stroke-width: 5; animation: pop-in 0.3s; transform-box: fill-box; transform-origin: center; }
 .diff-hint { fill: rgba(255, 214, 79, 0.25); stroke: #f5a623; stroke-width: 5; stroke-dasharray: 10 6; animation: pulse 0.8s infinite; transform-box: fill-box; transform-origin: center; }
 .diff-miss { fill: none; stroke: #ff5b6e; stroke-width: 5; transform-box: fill-box; transform-origin: center; animation: pop-in 0.2s; }
+
+/* ---------- Sudoku de Figuras ---------- */
+.sudoku-board {
+  --n: 4;
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--n), minmax(0, 1fr));
+  gap: 6px;
+  padding: 10px;
+  width: min(100cqw, 100cqh, 560px);
+  aspect-ratio: 1;
+  background: var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s;
+}
+.sudoku-board.solved { box-shadow: 0 0 0 8px var(--win), var(--shadow); }
+.sudoku-cell {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 14px;
+  background: var(--card);
+  font-size: min(calc(100cqw / var(--n) * 0.55), calc(100cqh / var(--n) * 0.55), 90px);
+  line-height: 1;
+  touch-action: manipulation;
+  transition: background 0.2s, transform 0.15s;
+}
+.sudoku-cell.given { background: #f1ecf8; }
+.sudoku-cell.empty { background: #fff; box-shadow: inset 0 0 0 3px #d9cfe8; }
+.sudoku-cell.same-line { background: #fff7d1; }
+.sudoku-cell.selected { background: #fff1a8; box-shadow: inset 0 0 0 5px #f5a623; transform: scale(1.04); }
+.sudoku-cell.placed { background: #d7f7e2; animation: pop-in 0.3s; }
+.sudoku-cell.clash { background: #ffd0d6 !important; box-shadow: inset 0 0 0 5px #ff5b6e; animation: wiggle 0.4s; }
+.sudoku-board.boxes, .sudoku-box {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+.sudoku-board.boxes { gap: 12px; }
+.sudoku-box { display: grid; gap: 6px; min-height: 0; }
+.sudoku-palette { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.sudoku-pick {
+  font-size: clamp(44px, 8vw, 72px);
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 22px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  touch-action: manipulation;
+  transition: transform 0.15s;
+}
+.sudoku-pick:active { transform: translateY(4px); }
+@media (max-height: 620px) {
+  .sudoku-pick { font-size: 40px; }
+}
